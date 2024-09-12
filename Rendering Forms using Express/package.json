@@ -1,0 +1,23 @@
+{
+  "name": "topic-1",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-ejs-layouts": "^2.5.1",
+    "axios": "^1.6.2",
+    "archiver": "^6.0.1",
+    "form-data": "^4.0.0",
+    "glob": "^10.3.10"
+  }
+}
