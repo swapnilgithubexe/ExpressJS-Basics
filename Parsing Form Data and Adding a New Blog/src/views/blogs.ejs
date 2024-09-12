@@ -1,0 +1,12 @@
+<h1>Blogs</h1>
+<% blogs.forEach(blog=> { %>
+  <div class="outer-div">
+    <img src="<%= blog.img %>" width="70" alt="Blog Image">
+    <h3>
+      <%= blog.title %>
+    </h3>
+    <p>
+      <%= blog.description %>
+    </p>
+  </div>
+  <% }) %>
