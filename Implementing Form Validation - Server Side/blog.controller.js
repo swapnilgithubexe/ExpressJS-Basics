@@ -15,10 +15,12 @@ export const validateBlog = (req, res) => {
   if (description.trim().length < 10) {
     errors.push("The description field should contain at least 10 characters");
   }
-  try {
-    const validUrl = new URL(imageUrl);
-  } catch (error) {
-    errors.push("The image URL provided should be a valid URL");
+  if (imageUrl && imageUrl.trim() !== "") {
+    try {
+      const url = new URL(imageUrl.trim());
+    } catch (error) {
+      errors.push("The image URL provided should be a valid URL");
+    }
   }
 
   if (errors.length > 0) {
