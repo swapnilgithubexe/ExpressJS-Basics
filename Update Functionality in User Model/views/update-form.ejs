@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <title>Hello, Ninja!</title>
+  </head>
+  <body>
+    <div class="container my-5">
+      <h3 class="text-success">Update User</h3>
+      <form
+        action="/"
+        method="post"
+        style="border: 1px dashed grey; border-radius: 10px"
+        class="p-2"
+      >
+        <div class="form-group">
+          <label for="exampleInputEmail1">Id</label>
+          <input
+            type="text"
+            class="form-control"
+            name="id"
+            placeholder="enter id of existing user"
+            value="<%=user.id%>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            placeholder="enter new name"
+            value="<%=user.name%>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            placeholder="enter new email"
+            value="<%=user.email%>"
+          />
+          <small id="emailHelp" class="form-text text-muted"
+            >We'll never share your email with anyone else.</small
+          >
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Avatar</label>
+          <input
+            type="url"
+            class="form-control"
+            name="image"
+            placeholder="enter new avatar image url"
+            value="<%=user.image%>"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+      </form>
+    </div>
+    <%if(error){ %>
+    <div class="container my-5">
+      <h2 class="text-danger">Error</h2>
+      <h4 class="text-info">Message: <%=error%></h4>
+    </div>
+    <%}%> <%if(user.id){%>
+    <div class="container my-5">
+      <h4 class="text-success">Successful</h4>
+      <h6 class="text-info">user updated Successfully</h6>
+      <div class="card bg-dark" style="width: 18rem">
+        <img class="card-img-top" src="<%=user.image%>" alt="Card image cap" />
+        <div class="card-body">
+          <h5 class="card-title text-success"><%=user.name%></h5>
+          <p class="card-text text-info"><%=user.email%></p>
+        </div>
+      </div>
+    </div>
+    <%}%>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
