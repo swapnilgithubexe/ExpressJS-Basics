@@ -1,0 +1,10 @@
+<div class="container p-5 gap-2 d-flex flex-wrap">
+  <% products.forEach((product)=>{ %>
+  <div class="card" style="width: 18rem">
+    <img src="<%=product.image%>" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <p class="card-text"><%=product.name%></p>
+    </div>
+  </div>
+  <%})%>
+</div>

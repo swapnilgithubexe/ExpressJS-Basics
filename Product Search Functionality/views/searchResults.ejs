@@ -1,0 +1,7 @@
+<!-- Write your code here to render the search data -->
+<% products && products.forEach(product => { %>
+  <div class="result-box">
+    <img src="<%=product.image %>" width="70">
+    <p><%= product.name%></p>
+  </div>
+  <% }) %>
