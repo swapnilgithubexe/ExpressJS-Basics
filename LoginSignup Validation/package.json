@@ -1,0 +1,23 @@
+{
+  "name": "e_comm_cn",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm server.js",
+    "dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-basic-auth": "^1.2.1",
+    "axios": "^1.6.2",
+    "archiver": "^6.0.1",
+    "form-data": "^4.0.0",
+    "glob": "^10.3.10"
+  }
+}
