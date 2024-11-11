@@ -41,14 +41,23 @@ export const addToCart = (userId, productId, quantity) => {
 export const removeFromCart = (userId, cartItemId) => {
   // Write your code here
 
-  const cartItemIndex = cartItems.findIndex((i) => i.id == cartItemId && i.userId == userId);
+  const cartItemIndex = cartItems.findIndex((i) => {
+    return i.id == cartItemId && i.userId == userId
+  });
+  if (cartItemIndex >= 0) {
+    let deletedItem = cartItems[cartItemIndex];
+    cartItems.splice(cartItemIndex, 1);
+    return {
+      success: true,
+      deletedCartItem: deletedItem
+    }
+  } else {
+    return {
+      success: false,
+      msg: "operation not allowed"
+    }
+  }
 
-  if (!cartItemIndex) {
-    return false
-  }
-  else {
-    const removedItem = cartItems.splice(cartItemIndex, 1);
-    return removedItem;
-  }
+
 
 };

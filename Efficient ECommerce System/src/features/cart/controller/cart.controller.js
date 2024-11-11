@@ -20,7 +20,7 @@ export const addToCartController = (req, res) => {
 export const removeFromCartController = (req, res) => {
   // Write your code here
   const userId = req.userId;
-  const cartItemId = req.params.id;
+  const cartItemId = req.params.itemId;
   // const cartItem = get(userId);
   // if (!cartItem) {
   //   return res.status(400).json({
@@ -29,16 +29,20 @@ export const removeFromCartController = (req, res) => {
   //   });
   // }
   const result = removeFromCart(userId, cartItemId);
-
-  if (!result) {
-    return res.status(400).json({
-      "success": false,
-      "msg": "operation not allowed"
-    });
+  if (result.success) {
+    return res.status(200).json(result)
   } else {
-    return res.status(200).json({
-      "success": true,
-      "deletedCartItem": result[0]
-    })
+    return res.status(400).json(result)
   }
+  // if (!result) {
+  //   return res.status(400).json({
+  //     "success": false,
+  //     "msg": "operation not allowed"
+  //   });
+  // } else {
+  //   return res.status(200).json({
+  //     "success": true,
+  //     "deletedCartItem": result[0]
+  //   })
+  // }
 };
