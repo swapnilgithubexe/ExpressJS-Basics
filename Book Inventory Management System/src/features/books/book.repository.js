@@ -59,15 +59,8 @@ export default class BookRepository {
 
     //deletion of book
     async deleteBookById(bookId) {
-        try {
-            const deletedBook = await booksModel.findByIdAndDelete(bookId);
-            if (!deletedBook) {
-                throw new Error("Book not found");
-            }
-            return "Book deleted successfully";
-        } catch (error) {
-            console.error(error);
-            throw error;
-        }
+        const deletedBook = await booksModel.findByIdAndRemove(bookId);
+        return deletedBook;
+
     }
 }
